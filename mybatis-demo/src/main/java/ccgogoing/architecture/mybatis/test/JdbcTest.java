@@ -1,19 +1,8 @@
 package ccgogoing.architecture.mybatis.test;
 
-import org.apache.ibatis.builder.xml.XMLConfigBuilder;
-import org.apache.ibatis.mapping.BoundSql;
-import org.apache.ibatis.mapping.MappedStatement;
-import org.apache.ibatis.mapping.ParameterMapping;
-import org.apache.ibatis.mapping.SqlSource;
-import org.apache.ibatis.session.Configuration;
 import org.junit.Test;
 
-import javax.sql.DataSource;
-import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class JdbcTest {
 
@@ -28,7 +17,7 @@ public class JdbcTest {
             Class.forName("com.mysql.jdbc.Driver");
 
             // 通过驱动管理类获取数据库链接connection = DriverManager
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ssm",
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ssm?characterEncoding=utf-8",
                     "root", "12345");
 
             // 定义sql语句 ?表示占位符
@@ -38,8 +27,8 @@ public class JdbcTest {
             preparedStatement = connection.prepareStatement(sql);
 
             // 设置参数，第一个参数为 sql 语句中参数的序号（从 1 开始），第二个参数为设置的
-            preparedStatement.setString(1, "王五");
-
+            preparedStatement.setString(1, "张三");
+            System.out.println(preparedStatement);
             // 向数据库发出 sql 执行查询，查询出结果集
             rs = preparedStatement.executeQuery();
 

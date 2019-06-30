@@ -1,7 +1,12 @@
 <mapper namespace="test">
 	<!-- select标签，封装了SQL语句信息、入参类型、结果映射类型 -->
-	<select id="findUserById" parameterType="ccgogoing.architecture.mybatis.entity.User"
+	<select id="findUserById" parameterType="java.lang.Integer"
 		resultType="ccgogoing.architecture.mybatis.entity.User" statementType="prepared">
 		SELECT * FROM user WHERE id = #{id} 
+	</select>
+
+	<select id = "findUserByName" parameterType="java.lang.String"
+			resultType="ccgogoing.architecture.mybatis.entity.User" statementType="PREPARED">
+		SELECT * FROM USER WHERE NAME = #{name}
 	</select>
 </mapper>
