@@ -1,6 +1,7 @@
 package com.architecture.mybatis.framework.statement;
 
 import com.architecture.mybatis.framework.mapping.BoundSql;
+import com.architecture.mybatis.framework.mapping.SqlSource;
 import lombok.*;
 
 /**
@@ -15,7 +16,7 @@ import lombok.*;
 @AllArgsConstructor
 public class MappedStatement {
 
-    private BoundSql boundSql;
+    private SqlSource sqlSource;
 
     private String statementType;
 

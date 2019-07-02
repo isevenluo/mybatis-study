@@ -1,12 +1,10 @@
 package com.architecture.mybatis.framework.config;
 
 import com.architecture.mybatis.framework.statement.MappedStatement;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -17,11 +15,15 @@ import java.util.Map;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Configuration {
 
     private DataSource dataSource;
 
-    private Map<String,MappedStatement> mappedStatementMap;
+    private Map<String,MappedStatement> mappedStatementMap = new HashMap<>();
 
+    public void addMappedStatement(String statementId, MappedStatement mappedStatement) {
+        this.mappedStatementMap.put(statementId, mappedStatement);
+    }
 
 }

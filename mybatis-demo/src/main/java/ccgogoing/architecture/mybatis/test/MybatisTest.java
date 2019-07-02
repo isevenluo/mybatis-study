@@ -3,8 +3,6 @@ package ccgogoing.architecture.mybatis.test;
 import ccgogoing.architecture.mybatis.dao.UserDao;
 import ccgogoing.architecture.mybatis.dao.UserDaoImpl;
 import ccgogoing.architecture.mybatis.entity.User;
-
-import com.architecture.mybatis.framework.sqlsession.SqlSession;
 import com.architecture.mybatis.framework.sqlsession.SqlSessionFactory;
 import com.architecture.mybatis.framework.sqlsession.SqlSessionFactoryBuilder;
 import org.junit.Before;

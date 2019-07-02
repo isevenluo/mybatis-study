@@ -15,10 +15,14 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class BoundSql {
-
+    /**
+     * 解析之后的sql
+     */
     private String boundSql;
     private List<ParameterMapping> parameterMappings;
 
-
+    public void addParameterMapping(ParameterMapping parameterMapping) {
+        this.parameterMappings.add(parameterMapping);
+    }
 
 }
