@@ -1,0 +1,13 @@
+SqlSessionFactoryBuilder#build：构建SqlSessionFactory
+	XMLConfigBuilder#parse：全局配置文件解析，获取Configuration对象
+		#parseConfiguration：解析根路径
+			#mapperElement：解析mapper映射文件
+				XMLMapperBuilder#parse：具体解析mapper映射文件
+				
+				
+XMLMapperBuilder#parse：具体解析mapper映射文件
+	#configurationElement:解析mapper映射文件根路径
+		#buildStatementFromContext：解析select等标签
+			#buildStatementFromContext：解析select标签，构建MappedStatement对象
+				XMLStatementBuilder#parseStatementNode：委托给XMLStatementBuilder类解析select标签
+					
