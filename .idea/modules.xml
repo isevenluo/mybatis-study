@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design-pattern/design-pattern.iml" filepath="$PROJECT_DIR$/design-pattern/design-pattern.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/开课吧/01-mybatis/03-mybatis/mybatis-3-master/mybatis.iml" filepath="$USER_HOME$/Desktop/开课吧/01-mybatis/03-mybatis/mybatis-3-master/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" filepath="$PROJECT_DIR$/mybatis-demo/mybatis-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-framework-customer/mybatis-framework-customer.iml" filepath="$PROJECT_DIR$/mybatis-framework-customer/mybatis-framework-customer.iml" />

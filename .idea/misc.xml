@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/mybatis-framework-customer/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
       </list>
     </option>
   </component>
