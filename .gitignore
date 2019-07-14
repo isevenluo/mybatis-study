@@ -24,7 +24,10 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 .idea/
+*/.classpath
+*/.idea/
 
 .idea/uiDesigner.xml
 mybatis-demo/target/generated-sources/
 mybatis-framework-customer/target/generated-sources/
+mybatis-demo/src/main/webapp/
