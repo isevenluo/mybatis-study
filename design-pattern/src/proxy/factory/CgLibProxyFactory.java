@@ -1,10 +1,7 @@
 package proxy.factory;
 
-import java.lang.reflect.Method;
-
 import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import proxy.advice.MyMethodInterceptor;
 
 /**
  * 主要作用就是生成代理类 使用CGLib动态代理技术实现 它是基于继承的方式实现的
@@ -12,39 +9,36 @@ import net.sf.cglib.proxy.MethodProxy;
  * @author think
  *
  */
-public class CgLibProxyFactory implements MethodInterceptor {
+public class CgLibProxyFactory {
 
 	/**
 	 * @param clazz
 	 * @return
 	 */
-	public Object getProxyByCgLib(Class clazz) {
+	public Object getProxyByCgLib(Class<?> clazz) {
 		// 创建增强器
 		Enhancer enhancer = new Enhancer();
 		// 设置需要增强的类的类对象
 		enhancer.setSuperclass(clazz);
 		// 设置回调函数
-		enhancer.setCallback(this);
+		enhancer.setCallback(new MyMethodInterceptor());
 		// 获取增强之后的代理对象
-		return enhancer.create();
+		Object object = enhancer.create();
+
+		// generatorClass(enhancer);
+
+		return object;
 	}
 
-	/***
-	 * Object proxy:这是代理对象，也就是[目标对象]的子类 
-	 * Method method:[目标对象]的方法 
-	 * Object[] arg:参数
-	 * MethodProxy methodProxy：代理对象的方法
+	/*
+	 * private void generatorClass(Enhancer enhancer) { FileOutputStream out = null;
+	 * try { byte[] bs = DefaultGeneratorStrategy.INSTANCE.generate(enhancer);
+	 * FileOutputStream fileOutputStream = new FileOutputStream("Enhancer_cglib" +
+	 * ".class"); fileOutputStream.write(bs); fileOutputStream.flush();
+	 * fileOutputStream.close(); } catch (Exception e) { e.printStackTrace(); }
+	 * finally { if (out != null) { try { out.close(); } catch (IOException e) { //
+	 * TODO Auto-generated catch block } } }
+	 * 
+	 * }
 	 */
-	@Override
-	public Object intercept(Object proxy, Method method, Object[] arg, MethodProxy methodProxy) throws Throwable {
-		// 因为代理对象是目标对象的子类
-		// 该行代码，实际调用的是父类目标对象的方法
-		System.out.println("这是cglib的代理方法");
-
-		// 通过调用子类[代理类]的invokeSuper方法，去实际调用[目标对象]的方法
-		Object returnValue = methodProxy.invokeSuper(proxy, arg);
-		// 代理对象调用代理对象的invokeSuper方法，而invokeSuper方法会去调用目标类的invoke方法完成目标对象的调用
-		
-		return returnValue;
-	}
 }

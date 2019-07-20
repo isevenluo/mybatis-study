@@ -19,9 +19,9 @@ public class TestProxy {
 		// 1、创建目标对象
 		UserService service = new UserServiceImpl();
 		// 2、生成代理对象
-		JDKProxyFactory proxyFactory = new JDKProxyFactory(service);
+		JDKProxyFactory proxyFactory = new JDKProxyFactory();
 		// 得到代理对象
-		UserService proxy = (UserService) proxyFactory.getProxy();
+		UserService proxy = (UserService) proxyFactory.getProxy(service);
 
 		// 生成class文件
 		generatorClass(proxy);
@@ -72,4 +72,5 @@ public class TestProxy {
 		}
 
 	}
+
 }
