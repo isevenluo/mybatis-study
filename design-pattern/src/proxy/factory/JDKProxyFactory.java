@@ -18,7 +18,7 @@ public class JDKProxyFactory {
 	public Object getProxy(Object target) {
 
 		// 如何生成一个代理类呢？
-		// 1、编写源文件(java文件)----目录类接口interface实现类（调用了目标对象的方法）
+		// 1、编写源文件(java文件)----目标类接口interface实现类（调用了目标对象的方法）
 		// class Proxy4{
 
 		// InvocationHandler
